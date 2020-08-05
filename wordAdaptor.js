@@ -4,6 +4,6 @@ class WordAdaptor {
     }
 
     getWords () {
-        fetch(this.baseurl).then(resp => resp.json()).then(obj => console.log(obj))
+        fetch(this.baseurl).then(resp => resp.json()).then(obj => Word.selectWord(obj));
     }
 }
