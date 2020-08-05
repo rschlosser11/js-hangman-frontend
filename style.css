@@ -34,6 +34,15 @@ body {
     border: solid 2px lightblue;
 }
 
+.alphabet-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+button.letter {
+    padding: 10px;
+    margin: 5px;
+}
 #guess-word {
     text-align: center;
     margin: 50px 0;
