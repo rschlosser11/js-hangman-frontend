@@ -6,7 +6,9 @@ class GamePlay {
         this.word.id = 'word-container';
         this.hangBox = document.createElement('canvas');
         this.hangBox.id = 'hangman-box'
-        document.getElementById('game-board').append(this.alphCont, this.word, this.hangBox)
+        this.category = document.createElement('p');
+        this.category.id = 'category-chosen'
+        document.getElementById('game-board').append(this.alphCont, this.category, this.word, this.hangBox)
     }
 
     startGame() {

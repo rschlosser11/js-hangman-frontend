@@ -20,5 +20,6 @@ class Category {
         let game = new GamePlay
         game.startGame();
         wordAdaptor.getAndDisplayWord()
+        document.getElementById('category-chosen').innerText = `The chosen category is ${this.name}:`
     }
 }
