@@ -11,5 +11,6 @@ class Category {
     renderCategory() {
         document.querySelector('div.cat-container').appendChild(this.button);
         this.button.innerText = `${this.name}`
+        this.button.classList.add('cat-button');
     }
 }
