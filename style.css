@@ -33,3 +33,14 @@ body {
     background-color: #fafafa;
     border: solid 2px lightblue;
 }
+
+#guess-word {
+    text-align: center;
+    margin: 50px 0;
+}
+
+li.letter {
+    display: inline;
+    margin: 0 5px;
+    font-size: 1.6em;
+}
