@@ -18,6 +18,7 @@ class Category {
     selectCategory () {
         let wordAdaptor = new WordAdaptor(`http://localhost:3000/categories/${this.id}/words`);
         let wordArr = wordAdaptor.getWords();
-        return new GamePlay
+        let game = new GamePlay
+        game.startGame();
     }
 }
