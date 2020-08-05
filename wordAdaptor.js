@@ -3,7 +3,12 @@ class WordAdaptor {
         this.baseurl = url;
     }
 
-    getWords () {
-        fetch(this.baseurl).then(resp => resp.json()).then(obj => Word.selectWord(obj));
+    getAndDisplayWord () {
+        fetch(this.baseurl).then(resp => resp.json()).then(obj => {
+            let word = new Word(Word.selectWord(obj))
+            console.log(word);
+            word.displayWord();
+            return Word.selectWord(obj)
+        });
     }
 }

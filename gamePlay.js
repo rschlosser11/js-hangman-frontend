@@ -2,11 +2,11 @@ class GamePlay {
     constructor() {
         this.alphCont = document.createElement('div')
         this.alphCont.classList.add('alphabet-container');
-        this.guessWord = document.createElement('div');
-        this.guessWord.id = 'word-to-guess';
+        this.word = document.createElement('div');
+        this.word.id = 'word-container';
         this.hangBox = document.createElement('canvas');
         this.hangBox.id = 'hangman-box'
-        document.getElementById('game-board').append(this.alphCont, this.guessWord, this.hangBox)
+        document.getElementById('game-board').append(this.alphCont, this.word, this.hangBox)
     }
 
     startGame() {
