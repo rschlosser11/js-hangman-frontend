@@ -18,7 +18,7 @@ class GamePlay {
 
         alphabet.forEach(letter => {
             let button = document.createElement('button');
-            button.classList.add('letter');
+            button.classList.add('alphabet-letter');
             button.innerText = letter;
             this.alphCont.appendChild(button)
         })

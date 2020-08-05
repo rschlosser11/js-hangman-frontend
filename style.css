@@ -39,7 +39,7 @@ body {
     margin: 0 auto;
 }
 
-button.letter {
+.alphabet-letter {
     padding: 10px;
     margin: 5px;
 }
