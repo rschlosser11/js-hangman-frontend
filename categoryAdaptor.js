@@ -4,6 +4,6 @@ class CategoryAdaptor {
     }
 
     getCategories() { 
-        fetch(`${baseurl}categories`).then(resp => resp.json()).then(obj => console.log(obj)).catch(error => console.log(error))
+        fetch(`${baseurl}categories`).then(resp => resp.json()).then(obj => obj.forEach(cat => new Category(cat))).catch(error => console.log(error))
     }
 }
