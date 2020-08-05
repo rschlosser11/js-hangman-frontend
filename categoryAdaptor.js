@@ -3,7 +3,10 @@ class CategoryAdaptor {
         this.baseURL = url;
     }
 
-    getCategories() { 
-        fetch(`${baseurl}categories`).then(resp => resp.json()).then(obj => obj.forEach(cat => new Category(cat))).catch(error => console.log(error))
+    getAndMakeCategories() { 
+        fetch(`${baseurl}categories`).then(resp => resp.json()).then(obj => obj.forEach(cat => {
+            let category = new Category(cat)
+            category.renderCategory();
+        })).catch(error => console.log(error))
     }
 }
