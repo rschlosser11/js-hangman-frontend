@@ -27,6 +27,7 @@ class CategoryAdaptor {
         .then(obj => {
             let cat = new Category(obj);
             cat.renderCategory();
+            WordAdaptor.getWordsFromCategory(cat.id)
         }).catch(error => console.log(error))
     }
 }

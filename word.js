@@ -54,4 +54,14 @@ class Word {
             }
         }
     }
+
+    static findOrCreateWord(wordObj) {
+        if (!Word.all.includes(wordObj)) {
+            console.log(wordObj)
+            let word = new Word(wordObj)
+            console.log(word)
+            Word.all.push(word)
+            return word;
+        }
+    }
 }
