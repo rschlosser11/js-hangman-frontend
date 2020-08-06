@@ -60,3 +60,7 @@ li.letter {
     text-align: center;
     font-size: 1.6em;
 }
+
+#lives {
+    text-align: center;
+}
