@@ -1,24 +1,32 @@
 class Word {
+    static chosenWord = '';
+    static all = [];
+
     constructor({id, word, category_id}) {
         this.id = id;
-        this.word = word;
+        this.word = word.toLowerCase();
         this.category_id = category_id;
-        this.ul = document.createElement('ul')
-        this.ul.id = 'guess-word'
-        document.getElementById('word-container').appendChild(this.ul);
+
+        Word.all.push(this);
     }
 
     static selectWord(words) {
         let num = Math.floor(Math.random() * (words.length - 1) + 1);
         for (let i = 0; i < words.length; i++) {
             if (i === num - 1) {
-                return words[i];
+                Word.chosenWord = words[i];
+                Word.chosenWord.displayWord();
             }
         }
     }
 
     displayWord() {
-        this.ul.classList.add('chosen-word');
+        let ul = document.createElement('ul')
+        ul.id = 'guess-word'
+        let container = document.createElement('div')
+        container.id = 'word-container'
+        container.appendChild(ul);
+        document.getElementById('game-board').append(container);
         let arr = this.word.split("")
         arr.forEach(letter => {
             let li = document.createElement('li');
@@ -33,7 +41,7 @@ class Word {
             } else {
                 li.innerText = "_";
             }
-            this.ul.appendChild(li);
+            ul.appendChild(li);
         })
     }
 }
