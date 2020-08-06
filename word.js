@@ -44,4 +44,14 @@ class Word {
             ul.appendChild(li);
         })
     }
+
+    displayLetter = (letter) => {
+        let lis = document.getElementById('guess-word').children;
+        let word = this.word
+        for (let i = 0; i < word.length; i++) {
+            if (word[i] === letter) {
+                lis[i].innerText = letter;
+            }
+        }
+    }
 }

@@ -6,7 +6,13 @@ class GamePlay {
         this.hangBox.id = 'hangman-box'
         this.category = document.createElement('p');
         this.category.id = 'category-chosen'
-        document.getElementById('game-board').append(this.alphCont, this.category, this.hangBox)       
+        document.getElementById('game-board').append(this.alphCont, this.category, this.hangBox)
+        document.addEventListener('click', e => {
+            let button = e.target
+            if (button.classList.contains('alphabet-letter')) {
+                this.guessCorrect(button);
+            }
+        });       
     }
 
     startGame() {
@@ -22,5 +28,13 @@ class GamePlay {
             button.innerText = letter;
             this.alphCont.appendChild(button)
         })
+    }
+
+    guessCorrect(e) {
+        let letter = e.innerText;
+        let word = Word.chosenWord.word;
+        if (word.includes(letter)) {
+            Word.chosenWord.displayLetter(letter)
+        }
     }
 }
