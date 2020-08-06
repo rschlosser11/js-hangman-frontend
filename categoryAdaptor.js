@@ -1,12 +1,8 @@
 class CategoryAdaptor {
     static baseUrl = "http://localhost:3000/categories"
 
-    constructor(url) {
-        this.baseURL = url;
-    }
-
-    getAndMakeCategories() { 
-        fetch(`${baseurl}categories`).then(resp => resp.json()).then(obj => obj.forEach(cat => {
+    static getAndMakeCategories() { 
+        fetch(`${CategoryAdaptor.baseUrl}`).then(resp => resp.json()).then(obj => obj.forEach(cat => {
             let category = new Category(cat)
             category.renderCategory();
         })).catch(error => console.log(error))
