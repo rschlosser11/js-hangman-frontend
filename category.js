@@ -36,7 +36,17 @@ class Category {
             <br/>
             <label><span>Word:</span><input id="word-field" type="text" name="word"></label>
             <br/>
-            <input id="create-category' type="submit" value="Submit">
+            <input type="submit" value="Submit">
         `
+    }
+
+    static submitNewCategory (e) {
+        e.preventDefault();
+        let form = document.querySelector('form.category-form');
+        let name = document.getElementById('category-name-field').value
+        let word = document.getElementById('word-field').value
+        form.classList.add('hidden');
+        document.getElementById('new-category-btn').classList.remove('hidden')
+        CategoryAdaptor.newCategory(name, word)
     }
 }

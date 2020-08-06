@@ -9,3 +9,4 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('new-category-btn').addEventListener('click', Category.renderCreateForm)
 })
 
+document.addEventListener('submit', Category.submitNewCategory)
