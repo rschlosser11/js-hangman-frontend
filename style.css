@@ -96,3 +96,9 @@ li.letter {
     width: 120px;
     font-size: 0.9em;
 }
+
+#hangman-box {
+    color: white;
+    border: dashed 2px lightblue;
+    padding:20px;
+}
