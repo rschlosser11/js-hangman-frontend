@@ -17,8 +17,10 @@ body {
 
 #body-container {
     background-color: #f0ebeb;
-    margin: 50px 0;
+    margin: 50px auto;
     padding: 30px 0;
+    width: 95%;
+    text-align: center;
 }
 
 .cat-container {
@@ -61,10 +63,36 @@ li.letter {
     font-size: 1.6em;
 }
 
-#lives {
+.hidden {
+    display: none;
+}
+
+#new-category-btn {
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: lightblue;
+    border: solid 1px black;
+}
+
+.category-form {
+    width: 33%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.category-form  input#create-category {
     text-align: center;
 }
 
-.hidden {
-    display: none;
+.category-form input {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.category-form span {
+    display: table-cell;
+    vertical-align: middle;
+    width: 120px;
+    font-size: 0.9em;
 }

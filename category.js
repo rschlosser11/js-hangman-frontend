@@ -32,10 +32,9 @@ class Category {
         document.getElementById('body-container').append(form);
         form.classList.add('category-form');
         form.innerHTML = `
-            <label>Name:</label>
-            <input id="category-name-field" type="text" name="name">
+            <label><span>Category Name:</span><input id="category-name-field" type="text" name="name"></label>
             <br/>
-            <input id="word-field" type="text" name="word">
+            <label><span>Word:</span><input id="word-field" type="text" name="word"></label>
             <br/>
             <input id="create-category' type="submit" value="Submit">
         `
