@@ -6,4 +6,6 @@ const wordAdaptor = new WordAdaptor(`${baseurl}words`)
 document.addEventListener('DOMContentLoaded', () => {
     wordAdaptor.getWords();
     categoryAdaptor.getAndMakeCategories();
+    document.getElementById('new-category-btn').addEventListener('click', Category.renderCreateForm)
 })
+
