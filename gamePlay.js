@@ -22,6 +22,7 @@ class GamePlay {
                 this.displayGuessResponse(button);
             }
         });       
+        this.newGame.addEventListener('click', this.playAgain)
     }
 
     startGame() {
@@ -91,4 +92,16 @@ class GamePlay {
     rightArm = () => {this.drawPart(150, 60, 180, 30)}
     leftLeg = () => {this.drawPart(150, 100, 130, 130)}
     rightLeg = () => {this.drawPart(150, 100, 170, 130)}
+
+    playAgain = () => {
+        let toRemove = [this.alphCont, this.category, this.lives, this.newGame, this.canvas, document.getElementById('word-container')]
+        toRemove.forEach(child => this.removeElement(document.getElementById('game-board'), child))
+        document.querySelector('div.cat-container').classList.remove('hidden')
+        document.querySelector('p.instructions').classList.remove('hidden')
+        document.querySelector('#new-category-btn').classList.remove('hidden')
+    }
+
+    removeElement(parent, child) {
+        parent.removeChild(child);
+    }
 }
