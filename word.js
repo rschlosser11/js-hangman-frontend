@@ -37,6 +37,14 @@ class Word {
                 li.innerText = " ";
             } else if (letter === "-") {
                 li.innerText = "-";
+            } else if (letter === ",") {
+                li.innerText = ",";
+            } else if (letter === ".") {
+                li.innerText = ".";
+            } else if (letter === "!") {
+                li.innerText = "!";
+            } else if (letter === "?") {
+                li.innerText = "?";
             } else {
                 li.innerText = "_";
             }
