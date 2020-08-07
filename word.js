@@ -68,4 +68,29 @@ class Word {
             return word;
         }
     }
+
+    static renderNewWordForm() {
+        document.getElementById('new-word-btn').classList.add('hidden')
+        let div = document.createElement('div');
+        div.classList.add('modal');
+        let content = document.createElement('div');
+        content.classList.add('modal-content');
+        div.append(content)
+        content.innerHTML = '<span class="close">&times</span><h3>Add a New Word</h3>'
+        let form = document.createElement('form');
+        content.appendChild(form)
+        document.getElementById('body-container').append(div);
+        form.id = 'word-form';
+        form.innerHTML = `
+            <label><span>Select a Category<span></label>
+            <select name="categories">
+            </select>
+            <br/>
+            <label><span>Word</span></label>
+            <input type='text' name='word'>
+            <br/>
+            <input type='submit' value='Submit'>
+        `
+        Category.renderSelectOptions(document.querySelector('select'))
+    }
 }

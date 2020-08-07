@@ -75,21 +75,17 @@ li.letter {
     border: solid 1px black;
 }
 
-.category-form {
+form {
     padding: 0 20px 20px 20px;
     text-align: left;
 }
 
-.category-form  input#create-category {
-    text-align: center;
-}
-
-.category-form input {
+form input, form select {
     padding: 5px;
     margin: 5px 0;
 }
 
-.category-form span {
+form span {
     display: table-cell;
     vertical-align: middle;
     width: 120px;

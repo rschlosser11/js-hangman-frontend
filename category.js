@@ -57,7 +57,13 @@ class Category {
         let word = document.getElementById('word-field').value
         modal.remove();;
         document.getElementById('new-category-btn').classList.remove('hidden')
-        CategoryAdaptor.newCategory(name, word)
+        CategoryAdaptor.newCategory(name, word);
+    }
 
+    static renderSelectOptions(parent) {
+        console.log(Category.all)
+        Category.all.forEach(category => {
+            parent.innerHTML += `<option value="${category.id}">${category.name}</option>`
+        })
     }
 }
