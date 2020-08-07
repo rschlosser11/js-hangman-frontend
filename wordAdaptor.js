@@ -10,4 +10,24 @@ class WordAdaptor {
             Word.findOrCreateWord(word)
         })).catch(error => console.log(error))
     }
+
+    static newWord(catId, word) {
+        fetch(`${WordAdaptor.baseUrl}/words`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                category_id: catId,
+                word: word
+            })
+        }).then(resp => resp.json())
+        .then(obj => {
+            console.log(obj)
+            let word = new Word(obj)
+            console.log(word);
+        })
+        .catch(error => console.log(error))
+    }
 }

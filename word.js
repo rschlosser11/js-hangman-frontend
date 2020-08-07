@@ -93,4 +93,14 @@ class Word {
         `
         Category.renderSelectOptions(document.querySelector('select'))
     }
+
+    static submitNewWord(e) {
+        e.preventDefault();
+        let modal = document.querySelector('div.modal');
+        let categoryId = parseInt(document.querySelector('select').value)
+        let word = document.querySelector('#word-form input[name=word]').value
+        modal.remove();;
+        document.getElementById('new-word-btn').classList.remove('hidden')
+        WordAdaptor.newWord(categoryId, word);
+    }
 }

@@ -5,7 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('new-category-btn').addEventListener('click', Category.renderCreateForm)
 })
 
-document.addEventListener('submit', Category.submitNewCategory)
+document.addEventListener('submit', (e) => {
+    if (e.target.classList.contains('category-form')) {
+        console.log(e)
+        Category.submitNewCategory(e);
+    } else if (e.target.id === 'word-form') {
+        console.log(e)
+        Word.submitNewWord(e);
+    }
+    
+})
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('close')) {
         document.querySelector('div.modal').remove()
