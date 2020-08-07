@@ -6,10 +6,6 @@ class Word {
         this.id = id;
         this.word = word.toLowerCase();
         this.category_id = category_id;
-
-        this.addNewWord = docoment.createElement('button');
-        this.addNewWord.id = 'new-word-btn'
-
         Word.all.push(this);
     }
 

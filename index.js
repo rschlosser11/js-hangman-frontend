@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('submit', Category.submitNewCategory)
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('close')) {
-        document.querySelector('div.modal').classList.add('hidden')
+        document.querySelector('div.modal').remove()
         document.getElementById('new-category-btn').classList.remove('hidden')
     }
 })
