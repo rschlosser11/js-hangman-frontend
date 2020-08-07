@@ -11,7 +11,11 @@ class GamePlay {
         this.ctx = this.canvas.getContext('2d')
         this.category = document.createElement('p');
         this.category.id = 'category-chosen'
-        document.getElementById('game-board').append(this.alphCont, this.category, this.lives, this.canvas)
+        this.newGame = document.createElement('button');
+        this.newGame.id = 'start-new-game';
+        this.newGame.innerText = "Play Again"
+        this.newGame.classList.add('hidden')
+        document.getElementById('game-board').append(this.alphCont, this.category, this.lives, this.newGame, this.canvas)
         document.addEventListener('click', e => {
             let button = e.target
             if (button.classList.contains('alphabet-letter')) {
@@ -52,8 +56,9 @@ class GamePlay {
             this.lives.innerHTML = `You have ${this.livesLeft} lives`
             this.drawHangman(this.livesLeft);
         } else {
-            this.lives.innerHTML = 'Game Over! To play again select a category below.'
+            this.lives.innerHTML = 'Game Over!'
             this.drawHangman(0)
+            this.newGame.classList.remove('hidden')
         }
     }
 

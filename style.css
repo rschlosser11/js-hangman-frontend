@@ -13,6 +13,7 @@ body {
 
 .instructions {
     text-align: center;
+    display: inline-block;
 }
 
 #body-container {
@@ -101,4 +102,6 @@ li.letter {
     color: white;
     border: dashed 2px lightblue;
     padding:20px;
+    display: block;
+    margin: 20px auto;
 }
