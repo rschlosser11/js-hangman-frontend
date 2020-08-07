@@ -36,7 +36,7 @@ class Category {
         let content = document.createElement('div');
         content.classList.add('modal-content');
         div.append(content)
-        content.innerHTML = '<h3>Add a New Category</h3><span class="close">&times</span>'
+        content.innerHTML = '<span class="close">&times</span><h3>Add a New Category</h3>'
         let form = document.createElement('form');
         content.appendChild(form)
         document.getElementById('body-container').append(div);
@@ -52,11 +52,12 @@ class Category {
 
     static submitNewCategory (e) {
         e.preventDefault();
-        let form = document.querySelector('form.category-form');
+        let modal = document.querySelector('div.modal');
         let name = document.getElementById('category-name-field').value
         let word = document.getElementById('word-field').value
-        form.classList.add('hidden');
+        modal.remove();;
         document.getElementById('new-category-btn').classList.remove('hidden')
         CategoryAdaptor.newCategory(name, word)
+
     }
 }
