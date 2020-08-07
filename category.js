@@ -31,8 +31,15 @@ class Category {
 
     static renderCreateForm = () => {
         document.getElementById('new-category-btn').classList.add('hidden')
+        let div = document.createElement('div');
+        div.classList.add('modal');
+        let content = document.createElement('div');
+        content.classList.add('modal-content');
+        div.append(content)
+        content.innerHTML = '<h3>Add a New Category</h3><span class="close">&times</span>'
         let form = document.createElement('form');
-        document.getElementById('body-container').append(form);
+        content.appendChild(form)
+        document.getElementById('body-container').append(div);
         form.classList.add('category-form');
         form.innerHTML = `
             <label><span>Category Name:</span><input id="category-name-field" type="text" name="name"></label>
