@@ -55,6 +55,11 @@ class Word {
         }
     }
 
+    static wordComplete() {
+        let letters = Array.from(document.getElementById('guess-word').children).map(letter => letter.innerText)
+        return letters.includes('_') ? false : true
+    }
+
     static findOrCreateWord(wordObj) {
         if (!Word.all.includes(wordObj)) {
             console.log(wordObj)

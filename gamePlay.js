@@ -19,7 +19,7 @@ class GamePlay {
         document.addEventListener('click', e => {
             let button = e.target
             if (button.classList.contains('alphabet-letter')) {
-                this.displayGuessResponse(button);
+                this.playGame(button);
             }
         });       
         this.newGame.addEventListener('click', this.playAgain)
@@ -103,5 +103,13 @@ class GamePlay {
 
     removeElement(parent, child) {
         parent.removeChild(child);
+    }
+
+    playGame(button) {
+        this.displayGuessResponse(button)
+        if (Word.wordComplete()) {
+            this.lives.innerText = 'YOU WON!'
+            this.newGame.classList.remove('hidden')
+        }
     }
 }
