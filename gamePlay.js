@@ -99,6 +99,7 @@ class GamePlay {
         document.querySelector('div.cat-container').classList.remove('hidden')
         document.querySelector('p.instructions').classList.remove('hidden')
         document.querySelector('#new-category-btn').classList.remove('hidden')
+        document.querySelector('#new-word-btn').classList.remove('hidden')
     }
 
     removeElement(parent, child) {

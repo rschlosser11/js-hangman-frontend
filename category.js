@@ -27,6 +27,7 @@ class Category {
         document.querySelector('div.cat-container').classList.add('hidden')
         document.querySelector('p.instructions').classList.add('hidden')
         document.querySelector('#new-category-btn').classList.add('hidden')
+        document.querySelector('#new-word-btn').classList.add('hidden')
     }
 
     static renderCreateForm = () => {
