@@ -35,9 +35,10 @@ class GamePlay {
         })
     }
 
-    displayGuessResponse(e) {
-        let letter = e.innerText;
+    displayGuessResponse(button) {
+        let letter = button.innerText;
         let word = Word.chosenWord.word;
+        button.disabled = true;
         if (word.includes(letter)) {
             Word.chosenWord.displayLetter(letter)
         } else {
@@ -52,16 +53,17 @@ class GamePlay {
             this.drawHangman(this.livesLeft);
         } else {
             this.lives.innerHTML = 'Game Over! To play again select a category below.'
+            this.drawHangman(0)
         }
     }
 
     drawHangman = (lives) => {
-        const drawArr = [this.rightLeg, this.leftLeg, this.rightArm, this.leftArm, this.torso, this.head, this.topFrame, this.leftFrame, this.btmFrame]
+        const drawArr = [this.rightLeg, this.leftLeg, this.rightArm, this.leftArm, this.torso, this.head, this.rope, this.topFrame, this.leftFrame, this.btmFrame]
         if (this.canvas.getContext) {
             this.ctx.beginPath();
             this.ctx.strokeStyle = '#999';
             this.ctx.lineWidth = 2;
-            drawArr[lives - 1]();
+            drawArr[lives]();
         }
     }
 
@@ -74,13 +76,14 @@ class GamePlay {
     btmFrame = () => {this.drawPart(0, 150, 100, 150)}
     leftFrame = () => {this.drawPart(0, 150, 0, 0)}
     topFrame = () => {this.drawPart(0, 0, 150, 0)}
+    rope = () => {this.drawPart(150, 0, 150, 10)}
     head = () => {
-        this.ctx.arc(150, 16, 15, 0, 2*Math.PI)
+        this.ctx.arc(150, 25, 15, 0, 2*Math.PI)
         this.ctx.stroke()
     }
-    torso = () => {this.drawPart(150, 30, 150, 90)}
-    leftArm = () => {this.drawPart(150, 50, 120, 30)}
-    rightArm = () => {this.drawPart(150, 50, 180, 30)}
-    leftLeg = () => {this.drawPart(150, 90, 130, 130)}
-    rightLeg = () => {this.drawPart(150, 90, 170, 130)}
+    torso = () => {this.drawPart(150, 40, 150, 100)}
+    leftArm = () => {this.drawPart(150, 60, 120, 30)}
+    rightArm = () => {this.drawPart(150, 60, 180, 30)}
+    leftLeg = () => {this.drawPart(150, 100, 130, 130)}
+    rightLeg = () => {this.drawPart(150, 100, 170, 130)}
 }
