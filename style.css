@@ -68,7 +68,7 @@ li.letter {
     display: none;
 }
 
-#new-category-btn {
+.add-new {
     margin: 10px;
     padding: 5px 10px;
     background-color: lightblue;
