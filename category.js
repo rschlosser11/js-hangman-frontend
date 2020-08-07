@@ -1,5 +1,5 @@
 class Category {
-
+    static all = [];
 
     constructor({id, name, words}) {
         this.id = id;
@@ -8,7 +8,7 @@ class Category {
 
         this.button = document.createElement('button');
         this.button.addEventListener('click', e => this.selectCategory(e));
-        
+        Category.all.push(this)
     }
 
     renderCategory() {
@@ -24,6 +24,9 @@ class Category {
         let words = Word.all.filter(word => word.category_id === this.id)
         Word.selectWord(words);
         document.getElementById('category-chosen').innerText = `The chosen category is ${this.name}:`;
+        document.querySelector('div.cat-container').classList.add('hidden')
+        document.querySelector('p.instructions').classList.add('hidden')
+        document.querySelector('#new-category-btn').classList.add('hidden')
     }
 
     static renderCreateForm = () => {
