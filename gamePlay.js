@@ -94,6 +94,7 @@ class GamePlay {
     rightLeg = () => {this.drawPart(150, 100, 170, 130)}
 
     playAgain = () => {
+        confetti.stop();
         let toRemove = [this.alphCont, this.category, this.lives, this.newGame, this.canvas, document.getElementById('word-container')]
         toRemove.forEach(child => this.removeElement(document.getElementById('game-board'), child))
         document.querySelector('div.cat-container').classList.remove('hidden')
@@ -109,6 +110,7 @@ class GamePlay {
     playGame(button) {
         this.displayGuessResponse(button)
         if (Word.wordComplete()) {
+            confetti.start();
             this.lives.innerText = 'YOU WON!'
             this.newGame.classList.remove('hidden')
         }
