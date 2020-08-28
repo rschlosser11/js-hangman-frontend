@@ -1,24 +1,26 @@
 body {
     max-width: 85%;
     margin: 0 auto;
-    background-color: lightblue;
+    background-color:rgb(102,178,178);
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color: #fffffa;
 }
 
 .title {
     font-variant: small-caps;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3em;
 }
 
 .instructions {
     text-align: center;
     display: inline-block;
+    font-size: 1.4em;
 }
 
 #body-container {
-    background-color: #f0ebeb;
-    margin: 50px auto;
+    background-color: rgb(102,178,178);
+    margin: 0 auto;
     padding: 30px 0;
     width: 95%;
     text-align: center;
@@ -29,14 +31,35 @@ body {
     margin-top: 25px;
 }
 
-.cat-button {
+button {
     padding: 10px;
     margin: 5px 5px;
+    background-color: rgb(102,178,178);
+    border: 2px solid #fff;
+    color: #fff;
+    outline: none;
 }
 
-.cat-button:hover {
-    background-color: #fafafa;
-    border: solid 2px lightblue;
+button:hover, button:focus {
+    background-color: rgb(255,255,255,0.8);
+    border: solid 2px #fff;
+    color: rgb(102,178,178);
+    cursor: pointer;
+}
+
+button:disabled {
+    /* background-color:  rgb(255, 255, 255, 0.5) */
+    background: linear-gradient(to top left, 
+        rgb(255, 255, 255, 0.3) 49%, 
+        rgb(255, 255, 255, 0) 50%, 
+        rgb(255, 255, 255, 0.3) 51% );
+    color: rgb(102,178,178);
+    border: 2px solid rgb(102,178,178);
+}
+
+.alphabet-letter {
+    font-size: 1.1em;
+    width: 40px;
 }
 
 .alphabet-container {
@@ -44,13 +67,10 @@ body {
     margin: 0 auto;
 }
 
-.alphabet-letter {
-    padding: 10px;
-    margin: 5px;
-}
 #guess-word {
     text-align: center;
     margin: 50px 0;
+    padding: 0;
 }
 
 li.letter {
@@ -71,8 +91,9 @@ li.letter {
 .add-new {
     margin: 10px;
     padding: 5px 10px;
-    background-color: lightblue;
-    border: solid 1px black;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: solid 1px #fff;
+    color:rgb(102,178,178);;
 }
 
 form {
@@ -94,7 +115,7 @@ form span {
 
 #hangman-box {
     color: white;
-    border: dashed 2px lightblue;
+    border: dashed 2px #fff;
     padding:20px;
     display: block;
     margin: 20px auto;
@@ -113,13 +134,13 @@ form span {
     padding-top: 100px;
 }
 .modal-content {
-    background-color: #f0ebeb;
+    background-color: rgba(255,255,255);
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #fff;
     width: 40%;
-    box-shadow: 10px 5px 5px #888;
     overflow: auto;
+    color: #000;
 }
 
 h3 {
@@ -138,4 +159,6 @@ h3 {
     text-decoration: none;
     cursor: pointer;
 }
-    
+input[type='submit']:hover {
+    cursor: pointer;
+}

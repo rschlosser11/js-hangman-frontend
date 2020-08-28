@@ -83,8 +83,8 @@ class GamePlay {
         const drawArr = [this.rightLeg, this.leftLeg, this.rightArm, this.leftArm, this.torso, this.head, this.rope, this.topFrame, this.leftFrame, this.btmFrame]
         if (this.canvas.getContext) {
             this.ctx.beginPath();
-            this.ctx.strokeStyle = '#999';
-            this.ctx.lineWidth = 2;
+            this.ctx.strokeStyle = '#fff';
+            this.ctx.lineWidth = 3;
             drawArr[lives]();
         }
     }
