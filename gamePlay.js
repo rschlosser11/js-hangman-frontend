@@ -29,6 +29,11 @@ class GamePlay {
         this.renderAlphabet();
     }
 
+    disableAllLetters = () => {
+        let letters = document.getElementsByClassName('alphabet-letter')
+        Array.from(letters).map(btn => btn.disabled = true)
+    }
+
     renderAlphabet () {
         let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
@@ -59,6 +64,7 @@ class GamePlay {
         } else {
             this.lives.innerHTML = 'Game Over!'
             this.drawHangman(0)
+            this.disableAllLetters()
             this.newGame.classList.remove('hidden')
         }
     }
@@ -111,6 +117,7 @@ class GamePlay {
         this.displayGuessResponse(button)
         if (Word.wordComplete()) {
             confetti.start();
+            this.disableAllLetters();
             this.lives.innerText = 'YOU WON!'
             this.newGame.classList.remove('hidden')
         }
