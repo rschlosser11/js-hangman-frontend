@@ -17,18 +17,31 @@ class GamePlay {
         this.newGame.classList.add('hidden')
         document.getElementById('game-board').append(this.alphCont, this.category, this.lives, this.newGame, this.canvas)
         document.addEventListener('click', e => {
+            let letter = e.target.innerText;
             let button = e.target
             if (button.classList.contains('alphabet-letter')) {
-                this.playGame(button);
+                this.playGame(letter);
             }
         });       
         this.newGame.addEventListener('click', this.playAgain)
+        document.addEventListener('keyup', e => {
+            let letter = e.key;
+            if (!!letter.match(/[a-z]/) && !Array.from(document.getElementsByClassName('alphabet-letter')).find(btn => btn.innerText === letter).disable === true){
+                this.playGame(letter)
+                this.disableLetter(letter);
+            }
+        })
         this.renderAlphabet();
     }
 
     disableAllLetters = () => {
         let letters = document.getElementsByClassName('alphabet-letter')
         Array.from(letters).map(btn => btn.disabled = true)
+    }
+
+    disableLetter = (letter) => {
+        let letters = document.getElementsByClassName('alphabet-letter')
+        Array.from(letters).find(btn => btn.innerText === letter).disabled = true;
     }
 
     renderAlphabet () {
@@ -42,10 +55,9 @@ class GamePlay {
         })
     }
 
-    displayGuessResponse(button) {
-        let letter = button.innerText;
+    displayGuessResponse(letter) {
         let word = Word.chosenWord.word;
-        button.disabled = true;
+        this.disableLetter(letter)
         if (word.includes(letter)) {
             Word.chosenWord.displayLetter(letter)
         } else {
@@ -111,8 +123,8 @@ class GamePlay {
         parent.removeChild(child);
     }
 
-    playGame(button) {
-        this.displayGuessResponse(button)
+    playGame(letter) {
+        this.displayGuessResponse(letter)
         if (Word.wordComplete()) {
             confetti.start();
             this.disableAllLetters();
