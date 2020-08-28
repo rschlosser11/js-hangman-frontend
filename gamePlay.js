@@ -63,6 +63,7 @@ class GamePlay {
             this.drawHangman(0)
             this.disableAllLetters()
             this.newGame.classList.remove('hidden')
+            this.livesLeft = 10;
         }
     }
 
@@ -117,6 +118,7 @@ class GamePlay {
             this.disableAllLetters();
             this.lives.innerText = 'YOU WON!'
             this.newGame.classList.remove('hidden')
+            this.livesLeft = 10;
         }
     }
 }
