@@ -23,9 +23,6 @@ class GamePlay {
             }
         });       
         this.newGame.addEventListener('click', this.playAgain)
-    }
-
-    startGame() {
         this.renderAlphabet();
     }
 

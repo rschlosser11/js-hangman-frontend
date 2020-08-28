@@ -19,8 +19,7 @@ class Category {
     }
 
     selectCategory () {
-        let game = new GamePlay
-        game.startGame();
+        new GamePlay
         let words = Word.all.filter(word => word.category_id === this.id)
         Word.selectWord(words);
         document.getElementById('category-chosen').innerText = `The chosen category is ${this.name}:`;
